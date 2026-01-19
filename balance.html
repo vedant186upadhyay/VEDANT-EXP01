@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>balance</title>
+    <style>
+      #b1 {
+  background-color: #1e66ff;
+  color: aliceblue;
+  margin-right: 10px;
+         }
+      #b2 {
+      background-color: #ff3b3b;
+      color: aliceblue;
+          }
+
+
+    </style>
+  </head>
+  <body>
+    <h1>BANK BALANCE:$<span id="balance"></span></h1>
+    <h3><label for ="amount">AMOUNT:</label></h3>
+    <input type="number" id="amount" placeholder="enter your amount"> </input><br><br>
+    <button id="b1" onclick="deposit()">DEPOSIT</button>
+    <button id="b2" onclick="withdraw()">WITHDRAW</button>
+    <P id="message"></P>
+  </body>
+  <script>
+    let balance;
+    function deposit(){
+      if (balance === undefined) balance = 0;
+      let amount =Number(document.getElementById('amount').value);
+      if(amount>0){
+        balance += amount;
+
+        document.getElementById('balance').innerText=balance;
+        document.getElementById('message').innerText="money recieved";
+      }
+      else{
+        document.getElementById('message').innerText="enter value paise";
+      }
+      document.getElementById('amount').value='';
+    }
+  </script>
+</html>
